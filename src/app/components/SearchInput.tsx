@@ -24,21 +24,22 @@ export default function SearchInput({ onChange, onReset }: SearchInputProps) {
           "0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)",
       }}
     >
-      <h2 style={{ marginTop: 0, marginBottom: "16px", color: "#265b4e" }}>
-        Search
-      </h2>
-      <input
-        style={{
-          border: "1px solid #265b4e",
-          padding: "8px",
-          borderRadius: "4px",
-          marginRight: "8px",
-        }}
-        onChange={onChange}
-      />
-      <button style={buttonStyle} onClick={onReset}>
-        Reset Search
-      </button>
+      <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+        <input
+          style={{
+            border: "1px solid #265b4e",
+            padding: "12px",
+            borderRadius: "4px",
+            flex: 1,
+            fontSize: "16px",
+          }}
+          onChange={onChange}
+          placeholder="Search advocates..."
+        />
+        <button style={buttonStyle} onClick={onReset}>
+          Reset
+        </button>
+      </div>
     </div>
   );
 }

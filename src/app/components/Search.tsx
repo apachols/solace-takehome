@@ -55,6 +55,17 @@ export default function Search({ advocates }: SearchProps) {
 
   return (
     <div>
+      <h2
+        style={{
+          textAlign: "center",
+          color: "#265b4e",
+          fontSize: "32px",
+          marginTop: 0,
+          marginBottom: "24px",
+        }}
+      >
+        Search
+      </h2>
       <SearchInput onChange={onChange} onReset={onReset} />
       <br />
       <br />

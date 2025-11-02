@@ -11,7 +11,9 @@ export default function PageHeader() {
         textAlign: "center",
       }}
     >
-      <h1 style={{ color: "white", margin: 0 }}>Solace Advocates</h1>
+      <h1 style={{ color: "white", margin: 0, fontSize: "40px" }}>
+        Solace Advocates
+      </h1>
     </header>
   );
 }
