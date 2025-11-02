@@ -20,8 +20,6 @@ export default function Home() {
   return (
     <main style={{ margin: "24px" }}>
       <PageHeader />
-      <br />
-      <br />
       <Search advocates={advocates} />
     </main>
   );

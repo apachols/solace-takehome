@@ -55,11 +55,7 @@ export default function Search({ advocates }: SearchProps) {
 
   return (
     <div>
-      <SearchInput
-        searchTerm={searchTerm}
-        onChange={onChange}
-        onReset={onReset}
-      />
+      <SearchInput onChange={onChange} onReset={onReset} />
       <br />
       <br />
       <SearchResults advocates={filteredAdvocates} />

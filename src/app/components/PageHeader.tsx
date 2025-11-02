@@ -1,7 +1,17 @@
 export default function PageHeader() {
   return (
-    <header>
-      <h1>Solace Advocates</h1>
+    <header
+      style={{
+        backgroundColor: "#265b4e",
+        padding: "20px 24px",
+        marginLeft: "-24px",
+        marginRight: "-24px",
+        marginTop: "-24px",
+        marginBottom: "32px",
+        textAlign: "center",
+      }}
+    >
+      <h1 style={{ color: "white", margin: 0 }}>Solace Advocates</h1>
     </header>
   );
 }
