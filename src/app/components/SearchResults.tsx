@@ -38,10 +38,7 @@ export default function SearchResults({ advocates }: SearchResultsProps) {
     <table style={tableStyle}>
       <thead>
         <tr>
-          <th style={thStyle}>First Name</th>
-          <th style={thStyle}>Last Name</th>
-          <th style={thStyle}>City</th>
-          <th style={thStyle}>Degree</th>
+          <th style={thStyle}>Specialist</th>
           <th style={thStyle}>Specialties</th>
           <th style={thStyle}>Years of Experience</th>
           <th style={thStyle}>Phone Number</th>
@@ -51,10 +48,14 @@ export default function SearchResults({ advocates }: SearchResultsProps) {
         {advocates.map((advocate: Advocate) => {
           return (
             <tr key={advocate.id} style={trStyle}>
-              <td style={tdStyle}>{advocate.firstName}</td>
-              <td style={tdStyle}>{advocate.lastName}</td>
-              <td style={tdStyle}>{advocate.city}</td>
-              <td style={tdStyle}>{advocate.degree}</td>
+              <td style={tdStyle}>
+                <div style={{ fontWeight: 600, marginBottom: "4px" }}>
+                  {advocate.firstName} {advocate.lastName}, {advocate.degree}
+                </div>
+                <div style={{ fontSize: "13px", color: "#6b7280" }}>
+                  {advocate.city}
+                </div>
+              </td>
               <td style={tdStyle}>
                 {advocate.specialties.map((s, index) => (
                   <div key={index} style={{ marginBottom: "4px" }}>
