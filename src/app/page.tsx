@@ -18,19 +18,28 @@ export default function Home() {
   }, []);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // TODO
+    // * Handle missing or weird data (from API or the DOM) gracefully
     const searchTerm = e.target.value;
 
     document.getElementById("search-term")!.innerHTML = searchTerm;
 
-    console.log("filtering advocates...");
+    const searchTermLcase = searchTerm.toLowerCase();
+
     const filteredAdvocates = advocates.filter((advocate: Advocate) => {
+      const matchedSpecialties = advocate.specialties.filter((specialty) =>
+        specialty.toLowerCase().includes(searchTermLcase)
+      );
+      if (matchedSpecialties.length) {
+        return true;
+      }
       return (
-        advocate.firstName.includes(searchTerm) ||
-        advocate.lastName.includes(searchTerm) ||
-        advocate.city.includes(searchTerm) ||
-        advocate.degree.includes(searchTerm) ||
-        advocate.specialties.includes(searchTerm) ||
-        advocate.yearsOfExperience.toString().includes(searchTerm)
+        advocate.firstName.toLowerCase().includes(searchTermLcase) ||
+        advocate.lastName.toLowerCase().includes(searchTermLcase) ||
+        advocate.city.toLowerCase().includes(searchTermLcase) ||
+        advocate.degree.toLowerCase().includes(searchTermLcase) ||
+        advocate.yearsOfExperience.toString().includes(searchTermLcase) ||
+        advocate.phoneNumber.toString().includes(searchTermLcase)
       );
     });
 
